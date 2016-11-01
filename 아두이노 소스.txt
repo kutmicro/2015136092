@@ -2,10 +2,11 @@
 void setup() { 
 	Serial.begin(9600);  //시리얼 통신 초기화
 	int F,S; 	//0~1023의 값으로 저항에따라 달라짐
-
+	int Dg;
 //F,S는 0~1023의 값
 pinMode(A0, INPUT_PULLUP); // A0핀을 입력 핀으로 선언(전후)
 pinMode(A1, INPUT_PULLUP); // A1핀을 입력 핀으로 선언(좌우)
+pinMode(Dg, INPUT_PULLUP); // Dg(디지털)핀을 입력 핀으로 선언(발사)
 } 
 
 void loop() {
@@ -30,6 +31,10 @@ if (analogRead(A1) <S) { // 만약에 A0핀의 아날로그값이 S 이하라면
     Keyboard.release('a'); // 'a' 키를 뗌
     Keyboard.release('d'); // 'd' 키를 뗌
   }
+if(DigitalRead(Dg)==1)
+	Keyboard.press('z');//z키를 누름
+else
+	Keyboard.release('z');
 }
 
 
