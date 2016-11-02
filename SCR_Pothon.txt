@@ -1,0 +1,22 @@
+void setup(){
+	  bool Reload=false;
+	  int Dg;			//디지털 핀넘버
+	  Serial.begin(9600);		//시리얼 통신 초기화
+	  pinMode(Dg,INPUT);
+
+	}
+	void loop(){
+	  if(digitalRead(Dg)==LOW)	//포토인터럽터사이에 아무것도 없을경우
+		{
+			if(Reload==true)
+				{
+				Keyboard.press('r');//r버튼을 누름
+				Keyboard.Release(‘r’);//r버튼을 뗌
+				Reload=false;
+				}
+		}
+	  else if((digitalRead(Dg)==HIGH)
+		{
+			Reload=true;
+		}
+	}
