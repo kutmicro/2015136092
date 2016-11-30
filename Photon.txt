@@ -1,0 +1,18 @@
+int sensor = 3; // 포토 인터럽터 센서와 연결된 핀번호
+
+void setup(){
+  pinMode(sensor, INPUT);
+  Serial.begin(9600);
+}
+// LED를 출력모드로, 포토 인터럽터 센서를 입력 모드로 설정
+void loop(){
+  int val = digitalRead(sensor); // 포토 인터럽터 센서에서 측정값을 받아 온다.
+  
+  if(val == HIGH){ // U자 홈 사이에 물체가 들어왓을 경우
+    Serial.println("!!!");
+  }
+  else{
+     Serial.println("@@@");
+    }
+ 
+}
