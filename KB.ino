@@ -1,6 +1,5 @@
 #include<Wire.h>
 #include<Keyboard.h>
-#include<Mouse.h>
 int r = 8;
 int a = 9;
 int w = 10;
